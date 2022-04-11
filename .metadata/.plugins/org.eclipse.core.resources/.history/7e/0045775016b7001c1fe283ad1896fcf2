@@ -1,0 +1,10 @@
+package com.example.seasnPrj.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class BookService {
+	public String testService() {
+		return "Test Service";
+	}
+}

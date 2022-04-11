@@ -1,0 +1,11 @@
+package com.example.seasnPrj.service;
+
+import org.springframework.stereotype.Service;
+
+@Service // 서비스 레이어임을 알려주는 어노테이션
+// 서비스 레이어: 비즈니스 로직 수행
+public class BookService {
+	public String testService() {
+		return "Test Service";
+	}
+}

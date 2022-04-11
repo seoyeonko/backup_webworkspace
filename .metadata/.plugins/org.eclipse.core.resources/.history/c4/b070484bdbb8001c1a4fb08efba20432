@@ -1,0 +1,22 @@
+package com.example.seanPrj.model;
+
+import javax.persistence.Entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Entity
+@Table(name = "Book")
+public class BookEntity {
+	private String id; // 자동 생성 
+	private String title; // 제목 
+	private String author; // 작가 
+	private String publisher; // 출판사 
+	private String userId; // 고객 아이디 
+}

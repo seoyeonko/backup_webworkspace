@@ -1,0 +1,11 @@
+package com.example.seanPrj.persistence;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.seanPrj.model.BookEntity;
+
+@Repository 
+public class BookRepository extends JpaRepository<BookEntity, String> {
+	List<BookEntity> findByUserId(String userId);
+}

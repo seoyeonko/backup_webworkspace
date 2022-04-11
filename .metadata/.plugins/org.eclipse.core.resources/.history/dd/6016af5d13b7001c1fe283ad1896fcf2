@@ -1,0 +1,21 @@
+package com.example.seanPrj.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.seanPrj.dto.TestRequestBodyDTO;
+
+@RestController
+@RequestMapping("test")
+public class TestController {
+	@GetMapping
+	public String testController() {		
+		return "Hello World!";
+	}
+	
+	@GetMapping("/testRequestBody")
+	public String testControllerRequestBody(@RequestBody TestRequestBodyDTO testRequestBodyDTO) {
+		return "Hello World! ID" + testRequestBodyDTO.getId() + "Message : " + testRequestBodyDTO.getMessage();
+	}
+}

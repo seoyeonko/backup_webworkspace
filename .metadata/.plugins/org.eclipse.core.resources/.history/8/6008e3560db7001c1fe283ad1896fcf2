@@ -1,0 +1,12 @@
+package com.example.seanPrj.model;
+
+import lombok.Builder;
+
+@Builder
+public class BookEntity {
+	private String id;
+	private String title;
+	private String author;
+	private String publisher;
+	private String userId;
+}
