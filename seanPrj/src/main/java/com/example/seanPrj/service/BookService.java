@@ -44,8 +44,8 @@ public class BookService {
 	}
 	
 	// READ
-	public List<BookEntity> retrieve(final String userId) {
-		return repository.findByUserId(userId);		
+	public List<BookEntity> retrieve(final String title) {
+		return repository.findByTitle(title);		
 	}
 	
 	// UPDATE
@@ -63,7 +63,8 @@ public class BookService {
 			repository.save(book);
 		});
 		
-		return retrieve(entity.getUserId());
+//		return retrieve(entity.getUserId()); // repository.findAll() - List<> 반 -> 자동 생성? 
+		return repository.findAll(); // List<> 객체를 반환할거임 수정된 아이템이 담긴 리스트
 	}
 	
 	// DELETE
@@ -77,7 +78,8 @@ public class BookService {
 			throw new RuntimeException("error deleting entity " + entity.getId());
 		}
 		
-		return retrieve(entity.getUserId());
+//		return retrieve(entity.getUserId());
+		return repository.findAll(); 
 	}
 	
 	private void validate(final BookEntity entity) {

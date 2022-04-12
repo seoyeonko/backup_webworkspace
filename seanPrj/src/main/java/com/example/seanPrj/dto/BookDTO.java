@@ -32,6 +32,7 @@ public class BookDTO {
 				.title(dto.getTitle())
 				.author(dto.getAuthor())
 				.publisher(dto.getPublisher())
+				.userId(dto.getUserId())
 				.build();
 	}
 }

@@ -13,5 +13,7 @@ import com.example.seanPrj.model.BookEntity;
 public interface BookRepository extends JpaRepository<BookEntity, String> {
 //	@Query("select * from Book t where t.userID = ?1")
 	List<BookEntity> findByUserId(String userId);
-	
+	List<BookEntity> findByTitle(String title);
+	// findById
+	// findAll 이미 있음
 }

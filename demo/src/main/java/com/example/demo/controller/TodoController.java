@@ -23,7 +23,7 @@ import com.example.demo.service.TodoService;
 @RequestMapping("todo")
 public class TodoController {
 	@Autowired // TodoService 자동 주입 
-	TodoService service;
+	private TodoService service;
 	
 //	@GetMapping("/testTodo")
 //	public ResponseEntity<?> testTodo2() {
