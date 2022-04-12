@@ -20,17 +20,17 @@ public class BookService {
 	@Autowired
 	private BookRepository repository;
 	
-	public String testService() {
-		// BookEntity 생성
-		BookEntity entity = BookEntity.builder().title("My first book item").build();
-		
-		// BookEntity 저장
-		repository.save(entity);
-		
-		// BookEntity 검색
-		BookEntity savedEntity = repository.findById(entity.getId()).get();
-		return savedEntity.getTitle();		
-	}
+//	public String testService() {
+//		// BookEntity 생성
+//		BookEntity entity = BookEntity.builder().title("My first book item").build();
+//		
+//		// BookEntity 저장
+//		repository.save(entity);
+//		
+//		// BookEntity 검색
+//		BookEntity savedEntity = repository.findById(entity.getId()).get();
+//		return savedEntity.getTitle();		
+//	}
 	
 	// CREATE 
 	public List<BookEntity> create(final BookEntity entity) {
@@ -45,7 +45,7 @@ public class BookService {
 	
 	// READ
 	public List<BookEntity> retrieve(final String title) {
-		return repository.findByTitle(title);		
+		return repository.findByTitle(title); // title 속성 값으로 검색 
 	}
 	
 	// UPDATE
@@ -64,7 +64,7 @@ public class BookService {
 		});
 		
 //		return retrieve(entity.getUserId()); // repository.findAll() - List<> 반 -> 자동 생성? 
-		return repository.findAll(); // List<> 객체를 반환할거임 수정된 아이템이 담긴 리스트
+		return repository.findAll(); // List<> 객체를 반환 (수정된 아이템이 담긴 리스트)
 	}
 	
 	// DELETE

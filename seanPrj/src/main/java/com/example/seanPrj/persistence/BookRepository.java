@@ -11,7 +11,6 @@ import com.example.seanPrj.model.BookEntity;
 // JpaRepository: save, findById, findAll 등이 기본 제공되는 인터페이스에 해당
 @Repository
 public interface BookRepository extends JpaRepository<BookEntity, String> {
-//	@Query("select * from Book t where t.userID = ?1")
 	List<BookEntity> findByUserId(String userId);
 	List<BookEntity> findByTitle(String title);
 	// findById
