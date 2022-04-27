@@ -1,8 +1,0 @@
-package com.example.seanPrj.persistence;
-
-import org.springframework.stereotype.Repository;
-
-@Repository 
-public class TodoRepository extends JpaRepository<TodoEntity, String> {
-
-}

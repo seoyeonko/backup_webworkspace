@@ -1,5 +1,0 @@
-package com.example.seanPrj.dto;
-
-public class TestRequestBodyDTO {
-
-}
