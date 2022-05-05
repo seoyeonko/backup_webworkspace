@@ -48,6 +48,11 @@ public class BookService {
 		return repository.findByTitle(title); // title 속성 값으로 검색 
 	}
 	
+	// READ - all
+//	public List<BookEntity> retrieveAll() {
+//		return repository.findAll();  
+//	}
+	
 	// UPDATE
 	public List<BookEntity> update(final BookEntity entity) {
 		// Validations

@@ -1,6 +1,5 @@
 package com.example.seanPrj.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,15 +42,38 @@ public class BookController {
 		}
 	}
 	
+	// 한권의 책을 조회 
+//	@GetMapping
+//	public ResponseEntity<?> retrieveBookList(@RequestBody BookDTO dto) {
+//		BookEntity entity = BookDTO.toEntity(dto); // dto -> entity (id 외의 속성들 null) 
+//		List<BookEntity> entities = service.retrieve(entity.getTitle()); // title 속성 값을 Service 계층에 넘김
+//		List<BookDTO> dtos =entities.stream().map(BookDTO::new).collect(Collectors.toList()); // entity -> dto 변환 
+//		ResponseDTO<BookDTO> response = ResponseDTO.<BookDTO>builder().data(dtos).build();
+//		
+//		return ResponseEntity.ok().body(response);
+//	}
+	
+	// New GetMapping -> https://juu-code.tistory.com/25
 	@GetMapping
-	public ResponseEntity<?> retrieveBookList(@RequestBody BookDTO dto) {
-		BookEntity entity = BookDTO.toEntity(dto); // dto -> entity (id 외의 속성들 null) 
-		List<BookEntity> entities = service.retrieve(entity.getTitle()); // title 속성 값을 Service 계층에 넘김
+	public ResponseEntity<?> retrieveBookList() {
+		
+		List<BookEntity> entities = service.retrieve("sean"); // author 임시..?
 		List<BookDTO> dtos =entities.stream().map(BookDTO::new).collect(Collectors.toList()); // entity -> dto 변환 
 		ResponseDTO<BookDTO> response = ResponseDTO.<BookDTO>builder().data(dtos).build();
 		
 		return ResponseEntity.ok().body(response);
 	}
+	
+	// 전체 책을 조회 
+//	@GetMapping("all")
+//	public ResponseEntity<?> retrieveBookListAll(@RequestBody BookDTO dto) {
+//		BookEntity entity = BookDTO.toEntity(dto); // dto -> entity (id 외의 속성들 null) 
+//		List<BookEntity> entities = service.retrieveAll(); // Service 계층에 넘겨 전체를 받아옴
+//		List<BookDTO> dtos =entities.stream().map(BookDTO::new).collect(Collectors.toList()); // entity -> dto 변환 
+//		ResponseDTO<BookDTO> response = ResponseDTO.<BookDTO>builder().data(dtos).build();
+//		
+//		return ResponseEntity.ok().body(response);
+//	}
 	
 	@PutMapping
 	public ResponseEntity<?> updateBook(@RequestBody BookDTO dto) {
