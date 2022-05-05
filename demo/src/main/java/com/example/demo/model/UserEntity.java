@@ -21,6 +21,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(uniqueConstraints = {@UniqueConstraint(columnNames = "email")})
 public class UserEntity {
+	// 유저의 정보
 
 	@Id // pk 지정 
 	@GeneratedValue(generator="system-uuid")
