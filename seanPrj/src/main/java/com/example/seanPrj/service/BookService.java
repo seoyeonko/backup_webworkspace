@@ -49,9 +49,9 @@ public class BookService {
 	}
 	
 	// READ - all
-//	public List<BookEntity> retrieveAll() {
-//		return repository.findAll();  
-//	}
+	public List<BookEntity> retrieveAll() {
+		return repository.findAll();  
+	}
 	
 	// UPDATE
 	public List<BookEntity> update(final BookEntity entity) {
