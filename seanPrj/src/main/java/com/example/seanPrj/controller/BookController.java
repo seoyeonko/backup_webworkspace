@@ -87,7 +87,7 @@ public class BookController {
 	}
 	
 	@DeleteMapping
-	public ResponseEntity<?> deleteTodo(@RequestBody BookDTO dto) {
+	public ResponseEntity<?> deleteBook(@RequestBody BookDTO dto) {
 		try {
 			BookEntity entity = BookDTO.toEntity(dto);  //
 			List<BookEntity> entities = service.delete(entity);

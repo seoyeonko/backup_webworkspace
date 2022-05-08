@@ -53,13 +53,13 @@ public class BookService {
 		return repository.findAll();  
 	}
 	
-	// UPDATE
+	// UPDATE - origin
 	public List<BookEntity> update(final BookEntity entity) {
 		// Validations
 		validate(entity);
 		
 		final Optional<BookEntity> original = repository.findById(entity.getId()); // Optional: null pointer exception 방지
-		
+
 		original.ifPresent(book -> {
 			book.setTitle(entity.getTitle());
 			book.setAuthor(entity.getAuthor());
@@ -72,12 +72,32 @@ public class BookService {
 		return repository.findAll(); // List<> 객체를 반환 (수정된 아이템이 담긴 리스트)
 	}
 	
+//	// UPDATE - new?
+//	public List<BookEntity> update(final BookEntity entity) {
+//		// Validations
+//		validate(entity);
+//		
+//		System.out.println(entity); // BookEntity(...)
+//		System.out.println(entity.getTitle()); // 변경하고자 하는 entity title 값 잘 출력됨 
+//
+//		
+//		List<BookEntity> original = repository.findByTitle(entity.getTitle()); // Optional: null pointer exception 방지
+//		
+//		// ?
+//		System.out.println(repository.findByTitle(entity.getTitle())); // []
+//		
+//		
+////		return retrieve(entity.getUserId()); // repository.findAll() - List<> 반 -> 자동 생성? 
+//		return repository.findAll(); // List<> 객체를 반환 (수정된 아이템이 담긴 리스트)
+//	}
+	
 	// DELETE
 	public List<BookEntity> delete(final BookEntity entity) {
 		validate(entity);
 		
 		try {
-			repository.delete(entity);
+//			repository.delete(entity); // id, tit, author, publsher, userid  값을 다 가져야 삭제가 되는 것
+			repository.deleteByTitle(entity.getTitle());
 		} catch(Exception e) {
 			log.error("error deleting entity ", entity.getId(), e);
 			throw new RuntimeException("error deleting entity " + entity.getId());
