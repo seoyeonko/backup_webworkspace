@@ -19,7 +19,7 @@ public interface BookRepository extends JpaRepository<BookEntity, String> {
 	@Query("select b from BookEntity b where b.title = ?1")
 	List<BookEntity> findByTitle(String title);
 	
-	void deleteByTitle(String title); // + 
+	void deleteByTitle(String title); 
 	
 	// deleteByTitle
 	// findById

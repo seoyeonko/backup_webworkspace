@@ -42,17 +42,6 @@ public class BookController {
 		}
 	}
 	
-//	@GetMapping
-//	public ResponseEntity<?> retrieveBookList(@RequestBody BookDTO dto) {
-//		BookEntity entity = BookDTO.toEntity(dto); // dto -> entity (id 외의 속성들 null) 
-//		List<BookEntity> entities = service.retrieve(entity.getTitle()); // title 속성 값을 Service 계층에 넘김
-//		List<BookDTO> dtos =entities.stream().map(BookDTO::new).collect(Collectors.toList()); // entity -> dto 변환 
-//		ResponseDTO<BookDTO> response = ResponseDTO.<BookDTO>builder().data(dtos).build();
-//		
-//		return ResponseEntity.ok().body(response);
-//	}
-	
-	// New GetMapping -> https://juu-code.tistory.com/25
 	// 전체 책을 조회
 	@GetMapping
 	public ResponseEntity<?> retrieveBookListAll(@RequestBody(required=false) BookDTO dto) {
