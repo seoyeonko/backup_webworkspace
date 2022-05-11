@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="get"/>
+		<item key="selection" value="findByTitle"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="findByTitle"/>
+			<item value="@Query(&quot;select * from Book b where b.title = ?1)&#x0A;"/>
+			<item value="retrieve"/>
+			<item value="requestbody"/>
+			<item value="find"/>
+			<item value="security"/>
 			<item value="Get"/>
 			<item value="BookRepository"/>
-			<item value="retrieve"/>
 			<item value="Todo"/>
 			<item value="getTodo"/>
 			<item value="getTodos"/>
@@ -24,7 +29,7 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1406"/>
+		<item key="DIALOG_X_ORIGIN" value="1350"/>
 		<item key="DIALOG_Y_ORIGIN" value="286"/>
 		<item key="DIALOG_WIDTH" value="336"/>
 		<item key="DIALOG_HEIGHT" value="402"/>
