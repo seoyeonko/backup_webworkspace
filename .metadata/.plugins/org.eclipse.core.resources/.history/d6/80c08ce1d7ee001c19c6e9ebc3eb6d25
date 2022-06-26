@@ -1,0 +1,5 @@
+package com.example.seanPrj.config;
+
+public class WebSecurityConfig {
+
+}

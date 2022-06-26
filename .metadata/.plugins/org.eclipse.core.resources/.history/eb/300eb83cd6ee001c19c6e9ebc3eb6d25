@@ -1,0 +1,5 @@
+package com.example.seanPrj.security;
+
+public class JwtAuthenticationFilter {
+
+}

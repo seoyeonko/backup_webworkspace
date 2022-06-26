@@ -1,0 +1,5 @@
+package com.example.seanPrj.service;
+
+public class UserService {
+
+}

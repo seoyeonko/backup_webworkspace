@@ -58,10 +58,12 @@ public class BookController {
 	@PostMapping("read")
 	public ResponseEntity<?> retrieveBookList(@AuthenticationPrincipal String userId, @RequestBody BookDTO dto) {
 		BookEntity entity = BookDTO.toEntity(dto); // dto -> entity (id 외의 속성들 null) 
+		System.out.print(entity);
 		List<BookEntity> entities = service.retrieve(userId); // 서비스 메서드의 Retrieve 메서드를 이용해 todo 리스트를 가져옴
 		List<BookDTO> dtos =entities.stream().map(BookDTO::new).collect(Collectors.toList()); // entity -> dto 변환 
 		ResponseDTO<BookDTO> response = ResponseDTO.<BookDTO>builder().data(dtos).build();
-		
+		System.out.print(response);
+
 		return ResponseEntity.ok().body(response);
 	}
 	

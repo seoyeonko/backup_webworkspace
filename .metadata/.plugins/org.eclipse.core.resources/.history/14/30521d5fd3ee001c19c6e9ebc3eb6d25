@@ -1,0 +1,16 @@
+package com.example.seanPrj.controller;
+
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.seanPrj.controller.UserController;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
+@RequestMapping("/auth")
+public class UserControlle
+public class UserController {
+
+}
